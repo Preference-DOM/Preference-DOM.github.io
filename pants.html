@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Pants folding Experiments</title>
+    <title>Preference-Aligned Visuomotor Diffusion Policies for Deformable Object Manipulation</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -27,13 +27,24 @@
         .video-item {
             width: 320px;
         }
+        .coming-soon {
+            width: 320px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            color: #fff;
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body class="is-preload">
 
 <!-- Header -->
 <header id="header">
-    <a href="index.html" class="title">S<sup>2</sup>-Diffusion: Generalizing from Instance-level to Category-level Skills in Robot Manipulation</a>
+    <a href="index.html" class="title">Preference-Aligned Visuomotor Diffusion Policies for Deformable Object Manipulation</a>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -48,13 +59,11 @@
     <div class="inner">
         <div class="divtitle">
             <article class="col-4 col-12-xsmall work-item">
-                <h2>S<sup>2</sup>-Diffusion - Bowl-to-Bowl Scooping Experiments</h2>
+                <h2>Pants folding evaluation</h2>
             </article>
         </div>
 
-        <div id="video-sections">
-            <!-- Videos inserted by JavaScript -->
-        </div>
+        <div id="video-sections"></div>
 
     </div>
 </section>
@@ -80,65 +89,49 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- Our Smart Video Loop Script -->
+<!-- Custom Script -->
 <script>
     const categories = [
-        {
-            title: "S²-Diffusion - red wiping",
-            prefix: "wiping_semantic_red_t",
-            count: 9
-        },
-        {
-            title: "S²-Diffusion - green wiping",
-            prefix: "wiping_semantic_green_t",
-            count: 9
-        },
-        {
-            title: "S²-Diffusion - red wiping",
-            prefix: "wiping_semantic_black_t",
-            count: 9
-        },
-        {
-            title: "Basline - red wiping",
-            prefix: "wiping_baseline_red_t",
-            count: 9
-        },
-        {
-            title: "Basline- green wiping",
-            prefix: "wiping_baseline_green_t",
-            count: 9
-        },
-        {
-            title: "Baseline - red wiping",
-            prefix: "wiping_baseline_black_t",
-            count: 9
-        }
+        { title: "Pants folding - preference 1", prefix: "pants1" },
+        { title: "Pants folding - preference 2", prefix: "pants2" },
+        { title: "Pants folding - preference 3", prefix: "pants3" }
     ];
 
-    const videoSections = document.getElementById('video-sections');
+    const models = [
+        { name: "RKO - 10 trials", suffix: "RKO", available: true },
+        { name: "KTO - 10 trials", suffix: "KTO", available: false },
+        { name: "RPO - 10 trials", suffix: "RPO", available: false },
+        { name: "DPO - 10 trials", suffix: "DPO", available: false },
+        { name: "DDPM - 10 trials", suffix: "DDPM", available: true }
+    ];
+
+    const videoPath = "videos/all_experiments/";
+    const videoSections = document.getElementById("video-sections");
 
     categories.forEach(category => {
-        // Add category title
-        videoSections.insertAdjacentHTML('beforeend', `
+        videoSections.insertAdjacentHTML("beforeend", `
             <h3 class="category-title">${category.title}</h3>
             <div class="video-grid" id="${category.prefix}"></div>
         `);
-
         const container = document.getElementById(category.prefix);
 
-        for (let i = 1; i <= category.count; i++) {
-            let trailNumber = i.toString().padStart(2, '0');
-            container.insertAdjacentHTML('beforeend', `
+        models.forEach(model => {
+            const videoFile = `${videoPath}${category.prefix}_${model.suffix}.webm`;
+            let videoHTML = model.available ? `
+                <video width="320" height="240" controls>
+                    <source src="${videoFile}" type="video/webm">
+                </video>
+            ` : `<div class="coming-soon">Coming soon</div>`;
+
+            container.insertAdjacentHTML("beforeend", `
                 <div class="video-item">
                     <article class="work-item">
-                        <h4>trial ${trailNumber}</h4>
-                        <video width="320" height="240" controls>
-                            <source src="videos/${category.prefix}${trailNumber}.mkv" type="video/mp4">
-                        </video>
+                        <h4>${model.name}</h4>
+                        ${videoHTML}
                     </article>
                 </div>
             `);
-        }
+        });
     });
 </script>
 
