@@ -37,8 +37,7 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h2>							Preference-Aligned Visuomotor Diffusion Policies for Deformable Object Manipulation</h2>
- </h2>
+							<h2>Preference-Aligned Visuomotor Diffusion Policies for Deformable Object Manipulation</h2>
 							<h3>Anonymous authors for review</h3>
 							<p>
 								Abstract - Humans naturally develop preferences for how manipulation tasks should be performed, which are often subtle, personal, and difficult to articulate. Although it is important for robots to account for these preferences to increase personalization and user satisfaction, they remain largely underexplored in robotic manipulation, particularly in the context of deformable objects like garments and fabrics. In this work, we study how to adapt pretrained visuomotor diffusion policies to reflect preferred behaviors using limited demonstrations. We introduce RKO, a novel preference-alignment method that combines the benefits of two recent frameworks: RPO and KTO. We evaluate RKO against common preference learning frameworks, including these two, as well as a baseline vanilla diffusion policy, on real-world cloth-folding tasks spanning multiple garments and preference settings. We show that preference-aligned policies (particularly RKO) achieve superior performance and sample efficiency compared to standard diffusion policy fine-tuning. These results highlight the importance and feasibility of structured preference learning for scaling personalized robot behavior in complex deformable object manipulation tasks.
@@ -48,7 +47,7 @@
 								<div class="video-container">
 							        <p><b>Preference-DOM</b> </p>
 							        <video width="960" height="540" controls>
-							            <source src="videos/TODO.mp4" type="video/mp4">
+							            <source src="videos/video_summary.mp4" type="video/mp4">
 							            Your browser does not support the video tag.
 							        </video>
 
@@ -56,7 +55,7 @@
 
 							</div>
 							<p> </p>
-							<a href="files/TODO.pdf" target="_blank" download="files/TODO.pdf">Download Preprint</a>
+							<a href="files/preprint.pdf" target="_blank" download="files/preprint.pdf">Download Preprint</a>
 
 
 
@@ -65,35 +64,97 @@
 					</section>
 
 
-					<!-- Train -->
+					<!-- RKO executions -->
 					<section id="train" class="wrapper style2 fade-up">
 						<div class="inner">
-							<h2>Expert Demonstrations</h2>
+							<h2>RKO executions</h2>
+
+							<p> </p>
+							<p> We evaluated policies trained on 60 winning demos for each preference style.</p>
 
 
 								<div class="video-container">
-							        <p><b>Red whiteboard wiping demonstrations</b> </p>
+							        <p><b>Folding pants preference 1 - RKO execution</b> </p>
 							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/expert_demos_wipe_speed5.mkv" type="video/mp4">
+							            <source src="videos/pants1_RKO.mp4" type="video/mp4">
 							            Your browser does not support the video tag.
 							        </video>
 							      </div>
 
-
-							<div class="video-container">
-							        <p><b>Bowl-to-bowl rice scooping demonstrations</b> </p>
+								<div class="video-container">
+							        <p><b>Folding pants preference 2 - RKO execution</b> </p>
 							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/expert_demos_rice_speed5.mkv" type="video/mp4">
+							            <source src="videos/pants2_RKO.mp4" type="video/mp4">
 							            Your browser does not support the video tag.
 							        </video>
+								
+								<div class="video-container">
+							        <p><b>Folding pants preference 3 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/pants3_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+
+
+								<div class="video-container">
+							        <p><b>Folding sleeves preference 1 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/sleeves1_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+							      </div>
+
+								<div class="video-container">
+							        <p><b>Folding sleeves preference 2 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/sleeves2_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+								
+								<div class="video-container">
+							        <p><b>Folding sleeves preference 3 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/sleeves3_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+									
+									
+
+								<div class="video-container">
+							        <p><b>Folding tshirt preference 1 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/tshirt1_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+							      </div>
+
+								<div class="video-container">
+							        <p><b>Folding tshirt preference 2 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/tshirt2_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+								
+								<div class="video-container">
+							        <p><b>Folding tshirt preference 3 - RKO execution</b> </p>
+							        <video width="640" height="360" controls preload="auto">
+							            <source src="videos/tshirt3_RKO.mp4" type="video/mp4">
+							            Your browser does not support the video tag.
+							        </video>
+
 							 </div>
+
+							<p> All experiments: </p>
+							<p> <a class="button mybutton"  href="pants.html" target="_blank" > Pants</a> </p>
+							<p> <a class="button mybutton"  href="sleeves.html" target="_blank" > Sleeves</a> </p>
+							<p> <a class="button mybutton"  href="tshirt.html" target="_blank" > Tshirt</a> </p>
 
 						</div>
 					</section>
 
 
 
-					<!-- Eval -->
+					<!-- Eval
 					<section id="eval" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Experiments </h2>
@@ -128,8 +189,6 @@
 							</div>
 
 							<p> All experiments: </p>
-
-							
 							<p> <a class="button mybutton"  href="whiteboard_wiping.html" target="_blank" > Whiteboard wiping</a> </p>
 
 							<p> </p>
@@ -180,7 +239,7 @@
 							
 
 						</div>
-					</section>
+					</section> -->
 
 				
 						<!-- Cite -->
